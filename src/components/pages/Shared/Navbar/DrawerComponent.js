@@ -35,7 +35,7 @@ const useStyles = makeStyles(() => ({
     paddingLeft: "35px",
   },
 }));
-
+// drawer page like navbar for mobile design only show this
 function DrawerComponent() {
   const { user, logout } = useAuth();
   const classes = useStyles();
@@ -55,7 +55,7 @@ function DrawerComponent() {
             ) : (
               <AccountCircleIcon
                 style={{
-                  marginLeft: "40px",
+                  marginLeft: "60px",
                   marginTop: "20px",
                   color: "white",
                 }}
@@ -64,7 +64,13 @@ function DrawerComponent() {
             )}
             <Typography
               variant="body1"
-              sx={{ fontWeight: "bold", color: "white", marginLeft: '50px', mt: 1, mb: 0 }}
+              sx={{
+                fontWeight: "bold",
+                color: "white",
+                marginLeft: "50px",
+                mt: 1,
+                mb: 0,
+              }}
               component="div"
             >
               {user?.displayName}

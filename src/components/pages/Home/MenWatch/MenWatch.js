@@ -4,6 +4,7 @@ import React from "react";
 import watchOne from "../../../images/manWatch/watch-1.jpg";
 import fosel from "../../../images/manWatch/fosel.jpg";
 import casio from "../../../images/manWatch/casio.jpg";
+// man watch page
 const MenWatch = () => {
   return (
     <Box sx={{ flexGrow: 1, py: 5 }}>
@@ -14,7 +15,12 @@ const MenWatch = () => {
               <Typography variant="caption" display="block" gutterBottom>
                 ELEGANCE IS SIMPLICITY
               </Typography>
-              <Typography sx={{color:"#444444"}} variant="h3" gutterBottom component="div">
+              <Typography
+                sx={{ color: "#444444" }}
+                variant="h3"
+                gutterBottom
+                component="div"
+              >
                 Men's Watches
               </Typography>
               <Typography variant="subtitle1" gutterBottom component="div">

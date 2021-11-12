@@ -31,13 +31,13 @@ const useStyles = makeStyles(() => ({
     borderRadius: "10px",
   },
 }));
-
+// my orders page
 const MyOrders = () => {
   const classes = useStyles();
   const [orders, setOrders] = useState([]);
   const { user } = useAuth();
-  const [isLoading, setIsLoading] = useState(false);
-
+  const [isLoading, setIsLoading] = useState(true);
+  // load the user matched data only
   useEffect(() => {
     fetch(`https://mighty-bastion-35979.herokuapp.com/order/${user?.email}`)
       .then((res) => res.json())
@@ -46,16 +46,15 @@ const MyOrders = () => {
         setIsLoading(false);
       });
   }, [user]);
-
+  // when the user onclick the button he can delete his order
   const handelDelete = (id) => {
     const procedd = window.confirm("Are you sure you want to delete?");
     if (procedd) {
-      fetch(`https://mighty-bastion-35979.herokuapp.com/delete/${id}`, {
+      fetch(`http://localhost:5000/orders/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log("user delete data", data);
           if (data?.deletedCount > 0) {
             swal("Good job!", "Deleted successfully", "success");
             const remaining = orders?.filter((product) => product._id !== id);
@@ -66,15 +65,23 @@ const MyOrders = () => {
   };
   return (
     <Container>
+      <Typography
+        variant="h5"
+        sx={{
+          fontWeight: "bold",
+          color: "#444444",
+          textAlign: "center",
+          mb: 2,
+        }}
+        component="div"
+      >
+        My Orders
+      </Typography>
+
       {isLoading ? (
         <Box sx={{ mt: 3, textAlign: "center" }}>
           <CircularProgress></CircularProgress>
         </Box>
-      ) : orders?.length === 0 ? (
-        <Alert severity="info">
-          Service item not found. Please go to the services page and make an
-          order! And come back this page!
-        </Alert>
       ) : (
         <Box sx={{ flexGrow: 1 }}>
           <Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 12 }}>

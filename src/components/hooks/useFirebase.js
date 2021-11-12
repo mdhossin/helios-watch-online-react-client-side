@@ -21,10 +21,6 @@ const useFirebase = () => {
   // get the user here store
   const [user, setUser] = useState({});
 
-
-  // token store here
-  //   const [token, setToken] = useState("")
-
   // reload dile jate page change na hoi sei jonno eta set korsi
   const [isLoading, setIsLoading] = useState(true);
   // for auth error er jonno state create korsi
@@ -32,7 +28,6 @@ const useFirebase = () => {
 
   // get the admin usser set here
   const [admin, setAdmin] = useState(false);
-
 
   // from firebase
   const auth = getAuth();
@@ -121,10 +116,6 @@ const useFirebase = () => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
-        // getIdToken(user).then(idToken => {
-        //   console.log(idToken);
-        //   setToken(idToken)
-        // })
       } else {
         setUser({});
       }

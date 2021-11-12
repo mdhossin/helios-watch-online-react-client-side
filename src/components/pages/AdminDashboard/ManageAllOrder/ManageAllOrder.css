@@ -33,7 +33,7 @@ table th {
 table thead tr {
   height: 50px;
 }
-
+/* responsive for mobile design */
 @media screen and (max-width: 600px) {
   table {
     border: 0;
@@ -48,14 +48,12 @@ table thead tr {
     padding: 0;
     position: absolute;
     width: 1px;
-   
   }
 
   table tr {
     border-bottom: 3px solid #ddd;
     display: block;
     margin-bottom: 0.625em;
-    
   }
 
   table td {
@@ -63,8 +61,7 @@ table thead tr {
     display: block;
     font-size: 1em;
     text-align: right;
-   padding: 20px;
-
+    padding: 20px;
   }
 
   table td::before {
@@ -76,7 +73,6 @@ table thead tr {
     float: left;
     font-weight: bold;
     text-transform: capitalize;
-   
   }
 
   table td:last-child {

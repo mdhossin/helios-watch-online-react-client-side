@@ -9,7 +9,6 @@ import {
   Typography,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(() => ({
   link: {
@@ -21,10 +20,10 @@ const useStyles = makeStyles(() => ({
     color: "white",
   },
 }));
-
+// blog page connected to blogs page
 const Blog = ({ blog }) => {
   const classes = useStyles();
-  const { name,title, image, description } = blog;
+  const { name, title, image, description } = blog;
   return (
     <Grid item xs={4} sm={4} md={4}>
       <Card sx={{ height: "100%" }} className={classes.link} elevation={0}>
@@ -36,10 +35,20 @@ const Blog = ({ blog }) => {
           alt="green iguana"
         />
         <CardContent>
-        <Typography    sx={{ color: "text.secondary", fontSize: '12px' }}gutterBottom variant="body1" component="div">
+          <Typography
+            sx={{ color: "text.secondary", fontSize: "12px" }}
+            gutterBottom
+            variant="body1"
+            component="div"
+          >
             {name}
           </Typography>
-          <Typography sx={{fontSize: '15px', fontWeight: 'bold', color:'#444444'}} gutterBottom variant="h6" component="div">
+          <Typography
+            sx={{ fontSize: "15px", fontWeight: "bold", color: "#444444" }}
+            gutterBottom
+            variant="h6"
+            component="div"
+          >
             {title}
           </Typography>
           <Typography variant="body2" color="text.secondary">

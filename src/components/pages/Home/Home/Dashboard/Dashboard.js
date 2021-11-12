@@ -3,7 +3,7 @@ import React from "react";
 import useAuth from "../../../../hooks/useAuth";
 import AdminDashboard from "../../../AdminDashboard/AdminDashboard/AdminDashboard";
 import UserDashboard from "../../../UserDashboard/UserDashboard/UserDashboard";
-
+// dashborad page
 const Dashboard = () => {
   const { admin, user } = useAuth();
   return (

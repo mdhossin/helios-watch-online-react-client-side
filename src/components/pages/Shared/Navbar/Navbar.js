@@ -44,7 +44,7 @@ const useStyles = makeStyles(() => ({
     marginLeft: "20px",
   },
 }));
-
+// navbar page
 function Navbar() {
   const { user, logout } = useAuth();
   const classes = useStyles();

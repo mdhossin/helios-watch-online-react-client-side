@@ -4,7 +4,7 @@ import { Box } from "@mui/system";
 import { useForm } from "react-hook-form";
 import swal from "sweetalert";
 import useAuth from "../../../hooks/useAuth";
-
+// reviews page
 const Reviews = () => {
   const { user } = useAuth();
   const {
@@ -13,7 +13,7 @@ const Reviews = () => {
     formState: { errors },
     reset,
   } = useForm();
-
+  // when click the button create new reviews
   const onSubmit = (data) => {
     fetch("https://mighty-bastion-35979.herokuapp.com/reviews", {
       method: "POST",
@@ -35,13 +35,13 @@ const Reviews = () => {
   return (
     <>
       <Container>
-      <Typography
-            variant="h5"
-            sx={{ fontWeight: "bold", color: "#444444" }}
-            component="div"
-          >
-            Add Reviews
-          </Typography>
+        <Typography
+          variant="h5"
+          sx={{ fontWeight: "bold", color: "#444444" }}
+          component="div"
+        >
+          Add Reviews
+        </Typography>
         <Box>
           <Grid container spacing={5}>
             <Grid item xs={12} md={6}>
@@ -100,7 +100,6 @@ const Reviews = () => {
           </Grid>
         </Box>
       </Container>
-
     </>
   );
 };

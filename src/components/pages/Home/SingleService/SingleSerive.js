@@ -21,10 +21,10 @@ const useStyles = makeStyles(() => ({
     color: "white",
   },
 }));
-
+// sinlge service page connected ot servies page
 const SingleService = ({ service }) => {
   const classes = useStyles();
-  const {_id, title, image, description, price, } = service;
+  const { _id, title, image, description, price } = service;
   return (
     <Grid item xs={4} sm={4} md={4}>
       <Card className={classes.link} elevation={0}>
@@ -46,7 +46,7 @@ const SingleService = ({ service }) => {
         <CardActions
           sx={{ display: "flex", justifyContent: "space-between", px: 2 }}
         >
-            <Link style={{ textDecoration: "none" }} to={`/allServices/${_id}`}>
+          <Link style={{ textDecoration: "none" }} to={`/allServices/${_id}`}>
             <Button variant="outlined">Add to cart</Button>
           </Link>
           <Typography gutterBottom variant="h6" component="div">

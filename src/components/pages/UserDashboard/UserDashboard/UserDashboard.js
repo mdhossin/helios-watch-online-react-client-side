@@ -46,8 +46,8 @@ const useStyles = makeStyles(() => ({
 }));
 
 const drawerWidth = 220;
-
-function ResponsiveDrawer(props) {
+// users 
+function UsersDashboard(props) {
   const { user, logout } = useAuth();
   let { path, url } = useRouteMatch();
   const classes = useStyles();
@@ -249,7 +249,7 @@ function ResponsiveDrawer(props) {
   );
 }
 
-ResponsiveDrawer.propTypes = {
+UsersDashboard.propTypes = {
   /**
    * Injected by the documentation to work in an iframe.
    * You won't need it on your project.
@@ -257,4 +257,4 @@ ResponsiveDrawer.propTypes = {
   window: PropTypes.func,
 };
 
-export default ResponsiveDrawer;
+export default UsersDashboard;

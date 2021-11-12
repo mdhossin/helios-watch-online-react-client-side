@@ -21,7 +21,7 @@ const useStyles = makeStyles(() => ({
     color: "white",
   },
 }));
-
+// single service page connected to all services page
 const Service = ({ service }) => {
   const classes = useStyles();
   const { _id, title, image, description, price } = service;

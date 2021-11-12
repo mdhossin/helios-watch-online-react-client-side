@@ -1,22 +1,19 @@
 import React from "react";
 import Box from "@mui/material/Box";
-
 import Grid from "@mui/material/Grid";
 import { Button, Container, Typography } from "@mui/material";
-
 import bgImg from "../../images/aboutus.jpg";
 import Footer from "../Shared/Footer/Footer";
-
 const appoinmentBg = {
   background: `url(${bgImg}) no-repeat center`,
   backgroundColor: "rgba(45, 58, 74, .5)",
   backgroundBlendMode: "darken, luminosity",
   height: "300px",
 };
-
+// about us page
 const AboutUs = () => {
   return (
-    <Box  sx={{backgroundColor: '#ffffff'}}>
+    <Box sx={{ backgroundColor: "#ffffff" }}>
       <Box
         style={appoinmentBg}
         sx={{

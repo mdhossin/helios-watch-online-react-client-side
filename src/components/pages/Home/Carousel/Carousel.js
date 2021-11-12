@@ -1,38 +1,35 @@
-import * as React from 'react';
-import { useTheme } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import MobileStepper from '@mui/material/MobileStepper';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
-import SwipeableViews from 'react-swipeable-views';
-import { autoPlay } from 'react-swipeable-views-utils';
-
+import * as React from "react";
+import { useTheme } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import MobileStepper from "@mui/material/MobileStepper";
+import Paper from "@mui/material/Paper";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
+import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
+import SwipeableViews from "react-swipeable-views";
+import { autoPlay } from "react-swipeable-views-utils";
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const images = [
   {
-    id : 1,
+    id: 1,
     imgPath:
-      'https://www.helioswatchstore.com/sites/default/files/1500x600.png',
+      "https://www.helioswatchstore.com/sites/default/files/1500x600.png",
   },
   {
-    id : 2,
+    id: 2,
     imgPath:
-      'https://www.helioswatchstore.com/sites/default/files/1500x600.jpg',
+      "https://www.helioswatchstore.com/sites/default/files/1500x600.jpg",
   },
   {
-    id : 3,
+    id: 3,
     imgPath:
-      'https://www.helioswatchstore.com/sites/default/files/banner%20opt2.jpg',
+      "https://www.helioswatchstore.com/sites/default/files/banner%20opt2.jpg",
   },
-  
-  
 ];
 
-
+// carousel page connect to banner page
 function Carousel() {
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
@@ -51,23 +48,20 @@ function Carousel() {
   };
 
   return (
-    <Box sx={{ maxWidth: '100%', flexGrow: 1 }}>
+    <Box sx={{ maxWidth: "100%", flexGrow: 1 }}>
       <Paper
         square
         elevation={0}
         sx={{
-          display: 'flex',
-          alignItems: 'center',
-       
+          display: "flex",
+          alignItems: "center",
+
           pl: 2,
-          bgcolor: 'background.default',
+          bgcolor: "background.default",
         }}
-        
-      >
-       
-      </Paper>
+      ></Paper>
       <AutoPlaySwipeableViews
-        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+        axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={activeStep}
         onChangeIndex={handleStepChange}
         enableMouseEvents
@@ -78,11 +72,11 @@ function Carousel() {
               <Box
                 component="img"
                 sx={{
-                  height: '100%',
-                  display: 'block',
-                 maxHeight:'500px',
-                  overflow: 'hidden',
-                  width: '100%',
+                  height: "100%",
+                  display: "block",
+                  maxHeight: "500px",
+                  overflow: "hidden",
+                  width: "100%",
                 }}
                 src={step.imgPath}
                 alt={step?.label}
@@ -101,8 +95,7 @@ function Carousel() {
             onClick={handleNext}
             disabled={activeStep === maxSteps - 1}
           >
-           
-            {theme.direction === 'rtl' ? (
+            {theme.direction === "rtl" ? (
               <KeyboardArrowLeft />
             ) : (
               <KeyboardArrowRight />
@@ -111,12 +104,11 @@ function Carousel() {
         }
         backButton={
           <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-            {theme.direction === 'rtl' ? (
+            {theme.direction === "rtl" ? (
               <KeyboardArrowRight />
             ) : (
               <KeyboardArrowLeft />
             )}
-           
           </Button>
         }
       />

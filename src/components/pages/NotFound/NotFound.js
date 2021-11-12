@@ -3,7 +3,6 @@ import { Container, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { Link } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-
 const theme = createTheme();
 
 theme.typography.h3 = {

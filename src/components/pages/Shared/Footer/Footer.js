@@ -1,5 +1,4 @@
 import React from "react";
-
 import {
   AppBar,
   Button,
@@ -38,7 +37,7 @@ const Root = styled("div")(({ theme }) => ({
     paddingTop: theme.spacing(3),
   },
 }));
-
+// footer page
 const Footer = () => {
   const classes = useStyles();
   return (
@@ -154,9 +153,8 @@ const Footer = () => {
                       id="filled-adornment-amount"
                     />
                   </FormControl>
-                  
                 </ListItem>
-                <Button sx={{ py: 1, px: 5, }} variant="contained"  >
+                <Button sx={{ py: 1, px: 5 }} variant="contained">
                   submit
                 </Button>
               </List>

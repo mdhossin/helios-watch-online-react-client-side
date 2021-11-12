@@ -3,7 +3,7 @@ import { Box } from "@mui/system";
 import React from "react";
 import { useForm } from "react-hook-form";
 import swal from "sweetalert";
-
+// add service page
 const AddService = () => {
   const {
     register,
@@ -11,7 +11,7 @@ const AddService = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-
+  // get the from data for createing new service
   const onSubmit = (data) => {
     fetch("https://mighty-bastion-35979.herokuapp.com/products", {
       method: "POST",
@@ -34,12 +34,12 @@ const AddService = () => {
   return (
     <Container sx={{ py: 5, mb: 2 }}>
       <Typography
-            variant="h5"
-            sx={{ fontWeight: "bold", color: "#444444",  mb: 2 }}
-            component="div"
-          >
-            Add New Product / Service
-          </Typography>
+        variant="h5"
+        sx={{ fontWeight: "bold", color: "#444444", mb: 2 }}
+        component="div"
+      >
+        Add New Product / Service
+      </Typography>
       <Box>
         <Grid container spacing={5}>
           <Grid item xs={12} md={6}>

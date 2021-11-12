@@ -22,14 +22,12 @@ const useStyles = makeStyles(() => ({
     borderRadius: "10px",
   },
 }));
-
+// place order page
 const PlaceOrder = () => {
   const classes = useStyles();
   const { id } = useParams();
   const { user, isLoading, setIsLoading } = useAuth();
-
   const [product, setProduct] = useState({});
-  console.log(product);
   const {
     register,
     handleSubmit,
@@ -45,7 +43,7 @@ const PlaceOrder = () => {
         setIsLoading(false);
       });
   }, []);
-
+  // when click the button place the order from
   const onSubmit = (data) => {
     data.service = product;
     data.email = user?.email;

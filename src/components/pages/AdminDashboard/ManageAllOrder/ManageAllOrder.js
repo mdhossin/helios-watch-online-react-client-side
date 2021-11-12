@@ -3,7 +3,7 @@ import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import swal from "sweetalert";
 import "./ManageAllOrder.css";
-
+// manage all order page
 const ManageAllOrder = () => {
   const [orders, setOrders] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -16,11 +16,10 @@ const ManageAllOrder = () => {
       });
   }, [isLoading]);
 
-
+  // change the status
   const handelPendingChange = (id) => {
     const data = orders?.find((pd) => pd?._id === id);
-    data.status = "Approved";
-    // console.log(data);
+    data.status = "Shipped";
     fetch(`https://mighty-bastion-35979.herokuapp.com/orders/${id}`, {
       method: "PUT",
       headers: {
@@ -35,6 +34,7 @@ const ManageAllOrder = () => {
         }
       });
   };
+  // delete single order when onclick
   const handelDelete = (id) => {
     const procedd = window.confirm("Are you sure you want to delete?");
     if (procedd) {
@@ -55,12 +55,17 @@ const ManageAllOrder = () => {
   return (
     <Container>
       <Typography
-            variant="h5"
-            sx={{ fontWeight: "bold", color: "#444444", textAlign:'center', mb: 2 }}
-            component="div"
-          >
-            Manage All Orders
-          </Typography>
+        variant="h5"
+        sx={{
+          fontWeight: "bold",
+          color: "#444444",
+          textAlign: "center",
+          mb: 2,
+        }}
+        component="div"
+      >
+        Manage All Orders
+      </Typography>
       {isLoading ? (
         <Box sx={{ mt: 3, textAlign: "center" }}>
           <CircularProgress></CircularProgress>

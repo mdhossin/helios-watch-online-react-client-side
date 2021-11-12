@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import { Alert, Button, Container, TextField, Typography } from "@mui/material";
-// import useAuth from "../../../hooks/useAuth";
 import { Box } from "@mui/system";
-
+// create new admin page
 const MakeAdmin = () => {
   const [email, setEmail] = useState("");
   const [success, setSuccess] = useState(false);
-  // get jwt token from useauth
-  // const { token } = useAuth();
 
   const handelOnChange = (e) => {
     setEmail(e.target.value);
@@ -19,7 +16,6 @@ const MakeAdmin = () => {
     fetch("https://mighty-bastion-35979.herokuapp.com/users/admin", {
       method: "PUT",
       headers: {
-        // authorization: `Bearer ${token}`,
         "content-type": "application/json",
       },
       body: JSON.stringify(user),
@@ -36,15 +32,15 @@ const MakeAdmin = () => {
   };
 
   return (
-    <Container sx={{mt: 3}}>
+    <Container sx={{ mt: 3 }}>
       <Box>
-      <Typography
-            variant="h5"
-            sx={{ fontWeight: "bold", color: "#444444" }}
-            component="div"
-          >
-            Create New Admin
-          </Typography>
+        <Typography
+          variant="h5"
+          sx={{ fontWeight: "bold", color: "#444444" }}
+          component="div"
+        >
+          Create New Admin
+        </Typography>
         <form onSubmit={handleAdminSubmit}>
           <TextField
             sx={{ width: "60%" }}
