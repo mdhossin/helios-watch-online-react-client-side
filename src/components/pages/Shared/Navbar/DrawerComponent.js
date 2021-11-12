@@ -76,13 +76,15 @@ function DrawerComponent() {
               </Link>
             </ListItemText>
           </ListItem>
-          <ListItem sx={{ px: 0 }} onClick={() => setOpenDrawer(false)}>
-            <ListItemText>
-              <Link to="/dashboard" className={classes.link}>
-                Dashboard
-              </Link>
-            </ListItemText>
-          </ListItem>
+          {user?.email && (
+            <ListItem sx={{ px: 0 }} onClick={() => setOpenDrawer(false)}>
+              <ListItemText>
+                <Link to="/dashboard" className={classes.link}>
+                  Dashboard
+                </Link>
+              </ListItemText>
+            </ListItem>
+          )}
 
           <ListItem onClick={() => setOpenDrawer(false)}>
             <ListItemText>

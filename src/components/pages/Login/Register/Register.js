@@ -31,7 +31,7 @@ const Register = () => {
   };
 
   const handelRegisterSubmit = (e) => {
-    const fullName = `${loginData?.firstName}${loginData?.lastName}`;
+    const fullName = `${loginData?.firstName} ${loginData?.lastName}`;
     console.log("first name", fullName);
     if (loginData.password !== loginData.password2) {
       alert("Password did not match");
