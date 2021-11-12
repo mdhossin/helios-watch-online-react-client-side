@@ -10,7 +10,7 @@ const Dashboard = () => {
       {user?.email && admin ? (
         <AdminDashboard></AdminDashboard>
       ) : (
-        <UserDashboard></UserDashboard>
+        <div>{user?.email && <UserDashboard></UserDashboard>}</div>
       )}
     </div>
   );
