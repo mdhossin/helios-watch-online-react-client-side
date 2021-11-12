@@ -7,7 +7,7 @@ const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
   const [ isLoading, setIsLoading ] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:5000/blogs")
+    fetch("https://mighty-bastion-35979.herokuapp.com/blogs")
       .then((res) => res.json())
       .then((data) => {
         setBlogs(data)
