@@ -60,7 +60,7 @@ const Login = () => {
       <CssBaseline />
       <Box
         sx={{
-          marginTop: 8,
+          marginTop: 2,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -133,9 +133,17 @@ const Login = () => {
           Sign In With Google
         </Button>
       </Box>
-      {isLoading && <CircularProgress />}
+      {isLoading && (
+        <Box sx={{ mt: 3, textAlign: "center" }}>
+          <CircularProgress></CircularProgress>
+        </Box>
+      )}
 
-      {authError && <Alert severity="error">{authError}</Alert>}
+      {authError && (
+        <Box sx={{ mt: 3, textAlign: "center" }}>
+          <Alert severity="error">{authError}</Alert>
+        </Box>
+      )}
     </Container>
   );
 };

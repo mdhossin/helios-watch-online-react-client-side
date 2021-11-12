@@ -38,7 +38,6 @@ const Register = () => {
       return;
     }
     registerUser(loginData.email, loginData.password, fullName, history);
-
     e.target.value = "";
     e.preventDefault();
   };
@@ -48,7 +47,7 @@ const Register = () => {
       <CssBaseline />
       <Box
         sx={{
-          marginTop: 5,
+          marginTop: 2,
           marginBottom: 5,
           display: "flex",
           flexDirection: "column",
