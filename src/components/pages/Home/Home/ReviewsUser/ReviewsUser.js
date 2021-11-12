@@ -80,7 +80,7 @@ const ReviewsUser = () => {
                     )}
 
                     <Typography gutterBottom variant="h6" component="div">
-                      {user?.displayName}
+                      {review?.user}
                     </Typography>
                   </Stack>
                   <CardContent>
