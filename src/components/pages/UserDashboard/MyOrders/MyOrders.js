@@ -3,7 +3,6 @@ import { Box } from "@mui/system";
 import useAuth from "../../../hooks/useAuth";
 
 import {
-  Alert,
   CircularProgress,
   Container,
   Grid,
@@ -50,7 +49,7 @@ const MyOrders = () => {
   const handelDelete = (id) => {
     const procedd = window.confirm("Are you sure you want to delete?");
     if (procedd) {
-      fetch(`http://localhost:5000/orders/${id}`, {
+      fetch(`https://mighty-bastion-35979.herokuapp.com/orders/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
