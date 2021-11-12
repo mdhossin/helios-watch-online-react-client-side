@@ -54,7 +54,6 @@ const Reviews = () => {
                   margin="normal"
                   fullWidth
                   id="name"
-                  defaultValue={user?.displayName}
                   label="Name"
                   {...register("user", { required: true })}
                   required

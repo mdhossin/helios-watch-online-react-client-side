@@ -11,7 +11,6 @@ import {
 } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
-
 import { makeStyles } from "@mui/styles";
 import swal from "sweetalert";
 
@@ -26,6 +25,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
+// manage product page for admin
 const ManageProducts = () => {
   const [services, setServices] = useState([]);
   const classes = useStyles();
@@ -39,7 +39,8 @@ const ManageProducts = () => {
         setIsLoading(false);
       });
   }, []);
-  // delete function
+
+  // delete function for single product
   const handelDelete = (id) => {
     const procedd = window.confirm("Are you sure you want to delete?");
     if (procedd) {
