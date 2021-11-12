@@ -42,9 +42,8 @@ const ReviewsUser = () => {
   const [isLoading, setIsLoading] = useState(true);
   const classes = useStyles();
   const [reviews, setReviews] = useState([]);
-  console.log(reviews);
   useEffect(() => {
-    fetch("http://localhost:5000/reviews")
+    fetch("https://mighty-bastion-35979.herokuapp.com/reviews")
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);
@@ -102,7 +101,7 @@ const ReviewsUser = () => {
                     >
                       <Rating
                         name="half-rating-read"
-                        defaultValue={review?.rating}
+                        defaultValue={review?.number}
                         precision={0.5}
                         readOnly
                       />

@@ -17,7 +17,7 @@ const Services = () => {
   // console.log(services);
   const [ isLoading, setIsLoading ] = useState(true)
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://mighty-bastion-35979.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => {
         setServices(data);

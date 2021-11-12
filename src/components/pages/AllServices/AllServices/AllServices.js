@@ -1,14 +1,13 @@
 import { CircularProgress, Container, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
-import useAuth from "../../../hooks/useAuth";
 import Service from "../Service/Service";
 import Footer from '../../../pages/Shared/Footer/Footer'
 const AllServices = () => {
   const [services, setServices] = useState([]);
-  const { isLoading, setIsLoading } = useAuth();
+  const [ isLoading, setIsLoading ] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://mighty-bastion-35979.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => {
         setServices(data)

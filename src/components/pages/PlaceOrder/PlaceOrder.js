@@ -38,7 +38,7 @@ const PlaceOrder = () => {
   } = useForm();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/products/${id}`)
+    fetch(`https://mighty-bastion-35979.herokuapp.com/products/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
@@ -47,11 +47,10 @@ const PlaceOrder = () => {
   }, []);
 
   const onSubmit = (data) => {
-    console.log(data);
     data.service = product;
     data.email = user?.email;
     data.status = "Pending";
-    fetch("http://localhost:5000/placeorder", {
+    fetch("https://mighty-bastion-35979.herokuapp.com/placeorder", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

@@ -18,10 +18,8 @@ const useStyles = makeStyles(() => ({
     textDecoration: "none",
     color: "#ffffff",
     fontSize: "18px",
-
-    paddingLeft : '50px',
+    paddingLeft: "50px",
     display: "block",
-
     "&:hover": {
       backgroundColor: "rgb(7, 177, 77, 0.42)",
     },
@@ -45,22 +43,22 @@ function DrawerComponent() {
           sx={{ backgroundColor: "#28425b", height: "100%", width: "240px" }}
         >
           <ListItem sx={{ px: 0, pt: 3 }} onClick={() => setOpenDrawer(false)}>
-            <ListItemText  >
+            <ListItemText>
               <Link to="/home" className={classes.link}>
                 Home
               </Link>
             </ListItemText>
           </ListItem>
 
-          <ListItem sx={{ px: 0, }} onClick={() => setOpenDrawer(false)}>
-            <ListItemText >
+          <ListItem sx={{ px: 0 }} onClick={() => setOpenDrawer(false)}>
+            <ListItemText>
               <Link to="/about" className={classes.link}>
                 About
               </Link>
             </ListItemText>
           </ListItem>
 
-          <ListItem sx={{ px: 0,  }} onClick={() => setOpenDrawer(false)}>
+          <ListItem sx={{ px: 0 }} onClick={() => setOpenDrawer(false)}>
             <ListItemText>
               <Link to="/allServices" className={classes.link}>
                 Services
@@ -68,7 +66,10 @@ function DrawerComponent() {
             </ListItemText>
           </ListItem>
 
-          <ListItem sx={{ px: 0,pb : 0, m: 0 }} onClick={() => setOpenDrawer(false)}>
+          <ListItem
+            sx={{ px: 0, pb: 0, m: 0 }}
+            onClick={() => setOpenDrawer(false)}
+          >
             <ListItemText>
               <Link to="/contact" className={classes.link}>
                 Contact

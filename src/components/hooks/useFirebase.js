@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -21,7 +20,7 @@ initializeAuthentication();
 const useFirebase = () => {
   // get the user here store
   const [user, setUser] = useState({});
-  console.log(user);
+
 
   // token store here
   //   const [token, setToken] = useState("")
@@ -33,7 +32,7 @@ const useFirebase = () => {
 
   // get the admin usser set here
   const [admin, setAdmin] = useState(false);
-  console.log('admin', admin);
+
 
   // from firebase
   const auth = getAuth();
@@ -135,12 +134,11 @@ const useFirebase = () => {
   }, [auth]);
 
   // admin data load here
-    useEffect(() => {
-      fetch(`http://localhost:5000/users/${user?.email}`)
-      .then(res => res.json())
-      .then(data => setAdmin(data.admin))
-
-    }, [user?.email])
+  useEffect(() => {
+    fetch(`https://mighty-bastion-35979.herokuapp.com/users/${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => setAdmin(data.admin));
+  }, [user?.email]);
 
   //   user signout here function
   const logout = () => {
@@ -159,7 +157,7 @@ const useFirebase = () => {
   // user save on the database
   const saveUserOnDatabase = (email, displayName, method) => {
     const user = { email, displayName };
-    fetch("http://localhost:5000/users", {
+    fetch("https://mighty-bastion-35979.herokuapp.com/users", {
       method: method,
       headers: {
         "content-type": "application/json",

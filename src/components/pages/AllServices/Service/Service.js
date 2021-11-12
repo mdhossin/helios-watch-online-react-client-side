@@ -24,7 +24,7 @@ const useStyles = makeStyles(() => ({
 
 const Service = ({ service }) => {
   const classes = useStyles();
-  const {_id, title, image, description, price } = service;
+  const { _id, title, image, description, price } = service;
   return (
     <Grid item xs={4} sm={4} md={4}>
       <Card sx={{ height: "100%" }} className={classes.link} elevation={0}>

@@ -1,38 +1,12 @@
-import {
-  Button,
-  CircularProgress,
-  Container,
-  Grid,
-  TextField,
-  Typography,
-} from "@mui/material";
+import React from "react";
+import { Button, Container, Grid, TextField } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-// import useAuth from "../../hooks/useAuth";
-// import Footer from "../Shared/Footer/Footer";
 import { useForm } from "react-hook-form";
 import swal from "sweetalert";
-import { makeStyles } from "@mui/styles";
 import useAuth from "../../../hooks/useAuth";
 
-// const useStyles = makeStyles(() => ({
-//     form: {
-//       border: '1px solid grey',
-//       padding: '50px',
-//       borderRadius: '10px'
-
-//     },
-
-//   }));
-
 const Reviews = () => {
-  // const classes = useStyles()
-  const { id } = useParams();
-  const { user, isLoading, setIsLoading } = useAuth();
-
-  //   const [product, setProduct] = useState({});
-  //   console.log(product);
+  const { user } = useAuth();
   const {
     register,
     handleSubmit,
@@ -41,9 +15,7 @@ const Reviews = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
-
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://mighty-bastion-35979.herokuapp.com/reviews", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -99,7 +71,7 @@ const Reviews = () => {
                   margin="normal"
                   fullWidth
                   type="number"
-                  {...register("rating", { min: 0, max: 5 })}
+                  {...register("number", { min: 0, max: 5 })}
                   required
                   placeholder="Rating"
                 />
@@ -121,7 +93,7 @@ const Reviews = () => {
           </Grid>
         </Box>
       </Container>
-      <Box>{/* <Footer></Footer> */}</Box>
+
     </>
   );
 };

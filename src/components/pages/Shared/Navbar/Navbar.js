@@ -2,7 +2,6 @@ import React from "react";
 import { useTheme } from "@mui/material/styles";
 import {
   AppBar,
-  Avatar,
   Button,
   CssBaseline,
   Toolbar,
@@ -14,7 +13,7 @@ import { NavLink as Link } from "react-router-dom";
 import DrawerComponent from "./DrawerComponent";
 import useAuth from "../../../hooks/useAuth";
 import { Box } from "@mui/system";
-import AvTimerIcon from '@mui/icons-material/AvTimer';
+import AvTimerIcon from "@mui/icons-material/AvTimer";
 const useStyles = makeStyles(() => ({
   navlinks: {
     marginLeft: "20px",
@@ -53,7 +52,7 @@ function Navbar() {
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
-    <AppBar position="sticky" ssx={{ bgcolor: 'primary.main' }}>
+    <AppBar position="sticky" ssx={{ bgcolor: "primary.main" }}>
       <CssBaseline />
       <Toolbar>
         <Typography
@@ -61,7 +60,7 @@ function Navbar() {
           variant="h6"
           className={classes.logo}
         >
-          <AvTimerIcon sx={{fontSize: '40px'}} /> HELIOS
+          <AvTimerIcon sx={{ fontSize: "40px" }} /> HELIOS
         </Typography>
         {isMobile ? (
           <DrawerComponent />
@@ -108,19 +107,19 @@ function Navbar() {
               <Button color="inherit">Contact</Button>
             </Link>
 
-            {
-              user && <Link
-              activeStyle={{
-                fontWeight: "bold",
-                color: "yellow",
-              }}
-              to="/dashboard"
-              className={classes.link}
-            >
-              <Button color="inherit">Dashboard</Button>
-            </Link>
-            }
-            
+            {user?.email && (
+              <Link
+                activeStyle={{
+                  fontWeight: "bold",
+                  color: "yellow",
+                }}
+                to="/dashboard"
+                className={classes.link}
+              >
+                <Button color="inherit">Dashboard</Button>
+              </Link>
+            )}
+
             {!user?.email ? (
               <Link className={classes.linkButton} to="/login">
                 <Button variant="outlined" color="inherit">
@@ -134,10 +133,8 @@ function Navbar() {
                 </Button>
               </Link>
             )}
-            
           </Box>
         )}
-        
       </Toolbar>
     </AppBar>
   );

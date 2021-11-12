@@ -1,23 +1,22 @@
 import React, { useState } from "react";
 import { Alert, Button, Container, TextField } from "@mui/material";
-import useAuth from "../../../hooks/useAuth";
+// import useAuth from "../../../hooks/useAuth";
 import { Box } from "@mui/system";
 
 const MakeAdmin = () => {
   const [email, setEmail] = useState("");
-  //   console.log(email);
   const [success, setSuccess] = useState(false);
   // get jwt token from useauth
-  const { token } = useAuth();
+  // const { token } = useAuth();
 
   const handelOnChange = (e) => {
     setEmail(e.target.value);
   };
 
+  // from submit
   const handleAdminSubmit = (e) => {
-    
     const user = { email };
-    fetch("http://localhost:5000/users/admin", {
+    fetch("https://mighty-bastion-35979.herokuapp.com/users/admin", {
       method: "PUT",
       headers: {
         // authorization: `Bearer ${token}`,

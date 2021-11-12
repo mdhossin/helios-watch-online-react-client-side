@@ -52,7 +52,7 @@ const useStyles = makeStyles(() => ({
 const drawerWidth = 240;
 
 function AdminDashboard(props) {
-  const { user, admin, logout } = useAuth();
+  const { user, logout } = useAuth();
   let { path, url } = useRouteMatch();
   const classes = useStyles();
   const { window } = props;
@@ -66,15 +66,18 @@ function AdminDashboard(props) {
     <Box sx={{ backgroundColor: "#1976D2", color: "#ffffff", height: "100%" }}>
       {user?.photoURL ? (
         <Avatar
-        style={{ marginLeft: "60px", marginTop: "30px" }}
-        alt="Remy Sharp"
-        src={user?.photoUrl}
-        sx={{ width: 90, height: 90 }}
-      />
+          style={{ marginLeft: "60px", marginTop: "30px" }}
+          alt="Remy Sharp"
+          src={user?.photoUrl}
+          sx={{ width: 90, height: 90 }}
+        />
       ) : (
-        <AccountCircleIcon style={{ marginLeft: "60px", marginTop: "30px" }} sx={{ fontSize: "100px" }} />
+        <AccountCircleIcon
+          style={{ marginLeft: "60px", marginTop: "30px" }}
+          sx={{ fontSize: "100px" }}
+        />
       )}
-     
+
       <Box sx={{ textAlign: "center", marginRight: "20px", marginTop: "8px" }}>
         {" "}
         {user?.displayName}

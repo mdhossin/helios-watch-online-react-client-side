@@ -1,5 +1,5 @@
-import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
+import { Box } from "@mui/system";
 import useAuth from "../../../hooks/useAuth";
 
 import {
@@ -26,22 +26,20 @@ const useStyles = makeStyles(() => ({
   },
   pending: {
     color: "#444444",
-    backgroundColor: '#dddddd',
-    padding:'7px 16px',
-    borderRadius : '10px',
-   
+    backgroundColor: "#dddddd",
+    padding: "7px 16px",
+    borderRadius: "10px",
   },
 }));
 
 const MyOrders = () => {
   const classes = useStyles();
   const [orders, setOrders] = useState([]);
-console.log(orders);
   const { user } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/order/${user?.email}`)
+    fetch(`https://mighty-bastion-35979.herokuapp.com/order/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);
@@ -52,7 +50,7 @@ console.log(orders);
   const handelDelete = (id) => {
     const procedd = window.confirm("Are you sure you want to delete?");
     if (procedd) {
-      fetch(`http://localhost:5000/delete/${id}`, {
+      fetch(`https://mighty-bastion-35979.herokuapp.com/delete/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -119,9 +117,14 @@ console.log(orders);
                     >
                       Delete
                     </Button>
-                    <Typography className={classes.pending} gutterBottom variant="body1" component="div">
-                        {order?.status}
-                      </Typography>
+                    <Typography
+                      className={classes.pending}
+                      gutterBottom
+                      variant="body1"
+                      component="div"
+                    >
+                      {order?.status}
+                    </Typography>
                   </CardActions>
                 </Card>
               </Grid>

@@ -10,7 +10,6 @@ import {
   InputLabel,
   List,
   ListItem,
-  TextField,
   Toolbar,
   Typography,
 } from "@mui/material";
@@ -44,7 +43,7 @@ const Footer = () => {
   const classes = useStyles();
   return (
     <AppBar
-      sx={{ py: 5, backgroundColor: "#060F24", color: "#FBFBFB" }}
+      sx={{ py: 5, backgroundColor: "#1976D2", color: "#FBFBFB" }}
       position="static"
       color="primary"
     >
@@ -137,16 +136,28 @@ const Footer = () => {
               <Typography variant="h6" gutterBottom component="div">
                 SUBSCRIBE TO OUR NEWSLETTER
               </Typography>
-              <List style={{ color: "red"}}>
+              <List style={{ color: "red" }}>
                 <ListItem sx={{ pl: 0, pb: 0, ml: 0 }}>
-                  <FormControl fullWidth sx={{ backgroundColor: '#212736', color: 'white', mb: 1 }} variant="filled">
-                    <InputLabel sx={{color: 'white',}} htmlFor="filled-adornment-amount">
+                  <FormControl
+                    fullWidth
+                    sx={{ backgroundColor: "#212736", color: "white", mb: 1 }}
+                    variant="filled"
+                  >
+                    <InputLabel
+                      sx={{ color: "white" }}
+                      htmlFor="filled-adornment-amount"
+                    >
                       Email
                     </InputLabel>
-                    <FilledInput sx={{color: 'white', width: '100%', pr: 0}} id="filled-adornment-amount" />
+                    <FilledInput
+                      sx={{ color: "white", width: "100%", pr: 0 }}
+                      id="filled-adornment-amount"
+                    />
                   </FormControl>
                 </ListItem>
-                  <Button sx={{py:1, px: 5}} variant="outlined">submit</Button>
+                <Button sx={{ py: 1, px: 5, }} variant="contained"  >
+                  submit
+                </Button>
               </List>
             </Grid>
           </Grid>

@@ -2,7 +2,6 @@ import * as React from "react";
 import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
@@ -22,7 +21,6 @@ import { Avatar, Button } from "@mui/material";
 import MyOrders from "../../UserDashboard/MyOrders/MyOrders";
 import Reviews from "../../UserDashboard/Reviews/Reviews";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-
 
 const useStyles = makeStyles(() => ({
   link: {
@@ -62,17 +60,20 @@ function ResponsiveDrawer(props) {
 
   const drawer = (
     <Box sx={{ backgroundColor: "#1976D2", color: "#ffffff", height: "100%" }}>
-       {user?.photoURL ? (
+      {user?.photoURL ? (
         <Avatar
-        style={{ marginLeft: "60px", marginTop: "30px" }}
-        alt="Remy Sharp"
-        src={user?.photoUrl}
-        sx={{ width: 90, height: 90 }}
-      />
+          style={{ marginLeft: "60px", marginTop: "30px" }}
+          alt="Remy Sharp"
+          src={user?.photoUrl}
+          sx={{ width: 90, height: 90 }}
+        />
       ) : (
-        <AccountCircleIcon style={{ marginLeft: "60px", marginTop: "30px" }} sx={{ fontSize: "100px" }} />
+        <AccountCircleIcon
+          style={{ marginLeft: "60px", marginTop: "30px" }}
+          sx={{ fontSize: "100px" }}
+        />
       )}
-     
+
       <Box sx={{ textAlign: "center", marginRight: "20px", marginTop: "8px" }}>
         {" "}
         {user?.displayName}
@@ -150,7 +151,6 @@ function ResponsiveDrawer(props) {
             Logout
           </Button>
         </ListItemText>
-        
       </List>
     </Box>
   );

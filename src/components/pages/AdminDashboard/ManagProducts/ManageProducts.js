@@ -11,8 +11,6 @@ import {
 } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import useAuth from "../../../hooks/useAuth";
 
 import { makeStyles } from "@mui/styles";
 import swal from "sweetalert";
@@ -31,20 +29,21 @@ const useStyles = makeStyles(() => ({
 const ManageProducts = () => {
   const [services, setServices] = useState([]);
   const classes = useStyles();
-  const [ isLoading, setIsLoading ] = useState(true)
+  const [isLoading, setIsLoading] = useState(true);
+  // load the product data
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://mighty-bastion-35979.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => {
         setServices(data);
         setIsLoading(false);
       });
   }, []);
-
+  // delete function
   const handelDelete = (id) => {
     const procedd = window.confirm("Are you sure you want to delete?");
     if (procedd) {
-      fetch(`http://localhost:5000/delete/${id}`, {
+      fetch(`https://mighty-bastion-35979.herokuapp.com/delete/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -58,7 +57,6 @@ const ManageProducts = () => {
     }
   };
 
-
   return (
     <>
       <Container sx={{ pt: 3, pb: 5 }}>
@@ -68,7 +66,7 @@ const ManageProducts = () => {
           gutterBottom
           component="div"
         >
-          Manage All Order
+          Manage All Products
         </Typography>
         {isLoading ? (
           <Box sx={{ mt: 3, textAlign: "center" }}>
@@ -78,7 +76,7 @@ const ManageProducts = () => {
           <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 12 }}>
               {services?.map((service, index) => (
-                <Grid item xs={4} sm={4} md={4}>
+                <Grid key={index} item xs={4} sm={4} md={4}>
                   <Card className={classes.link} elevation={0}>
                     <CardMedia
                       component="img"
@@ -102,7 +100,11 @@ const ManageProducts = () => {
                         px: 2,
                       }}
                     >
-                      <Button  onClick={() => handelDelete(service?._id)} variant="outlined" color="error">
+                      <Button
+                        onClick={() => handelDelete(service?._id)}
+                        variant="outlined"
+                        color="error"
+                      >
                         delete
                       </Button>
 
