@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Alert, Button, Container, TextField } from "@mui/material";
+import { Alert, Button, Container, TextField, Typography } from "@mui/material";
 // import useAuth from "../../../hooks/useAuth";
 import { Box } from "@mui/system";
 
@@ -36,8 +36,15 @@ const MakeAdmin = () => {
   };
 
   return (
-    <Container>
+    <Container sx={{mt: 3}}>
       <Box>
+      <Typography
+            variant="h5"
+            sx={{ fontWeight: "bold", color: "#444444" }}
+            component="div"
+          >
+            Create New Admin
+          </Typography>
         <form onSubmit={handleAdminSubmit}>
           <TextField
             sx={{ width: "60%" }}

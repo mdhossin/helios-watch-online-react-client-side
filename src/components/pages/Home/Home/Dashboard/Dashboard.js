@@ -1,3 +1,4 @@
+import { Box } from "@mui/system";
 import React from "react";
 import useAuth from "../../../../hooks/useAuth";
 import AdminDashboard from "../../../AdminDashboard/AdminDashboard/AdminDashboard";
@@ -10,7 +11,7 @@ const Dashboard = () => {
       {user?.email && admin ? (
         <AdminDashboard></AdminDashboard>
       ) : (
-        <div>{user?.email && <UserDashboard></UserDashboard>}</div>
+        <Box>{user?.email && <UserDashboard></UserDashboard>}</Box>
       )}
     </div>
   );

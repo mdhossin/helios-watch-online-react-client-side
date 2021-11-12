@@ -1,10 +1,12 @@
 import {
+  Avatar,
   Button,
   Drawer,
   IconButton,
   List,
   ListItem,
   ListItemText,
+  Typography,
 } from "@mui/material";
 
 import React, { useState } from "react";
@@ -12,6 +14,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { makeStyles } from "@mui/styles";
 import { Link } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
+import { Box } from "@mui/system";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 const useStyles = makeStyles(() => ({
   link: {
@@ -39,6 +43,34 @@ function DrawerComponent() {
   return (
     <>
       <Drawer open={openDrawer} onClose={() => setOpenDrawer(false)}>
+        {user?.email && (
+          <Box sx={{ backgroundColor: "#28425b" }}>
+            {user?.photoURL ? (
+              <Avatar
+                style={{ marginLeft: "60px", marginTop: "20px" }}
+                alt="Remy Sharp"
+                src={user?.photoUrl}
+                sx={{ width: 60, height: 60 }}
+              />
+            ) : (
+              <AccountCircleIcon
+                style={{
+                  marginLeft: "40px",
+                  marginTop: "20px",
+                  color: "white",
+                }}
+                sx={{ fontSize: "60px" }}
+              />
+            )}
+            <Typography
+              variant="body1"
+              sx={{ fontWeight: "bold", color: "white", marginLeft: '50px', mt: 1, mb: 0 }}
+              component="div"
+            >
+              {user?.displayName}
+            </Typography>
+          </Box>
+        )}
         <List
           sx={{ backgroundColor: "#28425b", height: "100%", width: "240px" }}
         >
@@ -66,16 +98,6 @@ function DrawerComponent() {
             </ListItemText>
           </ListItem>
 
-          <ListItem
-            sx={{ px: 0, pb: 0, m: 0 }}
-            onClick={() => setOpenDrawer(false)}
-          >
-            <ListItemText>
-              <Link to="/contact" className={classes.link}>
-                Contact
-              </Link>
-            </ListItemText>
-          </ListItem>
           {user?.email && (
             <ListItem sx={{ px: 0 }} onClick={() => setOpenDrawer(false)}>
               <ListItemText>

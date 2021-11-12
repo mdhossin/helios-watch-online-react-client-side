@@ -29,7 +29,7 @@ const Services = () => {
     <>
     <Container sx={{ pt: 3, pb: 5 }}>
       <Typography
-        sx={{ textAlign: "center", mb: 5 }}
+        sx={{ textAlign: "center", mb: 5, color:'#444444' }}
         variant="h3"
         gutterBottom
         component="div"

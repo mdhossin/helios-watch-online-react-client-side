@@ -1,16 +1,16 @@
 import { CircularProgress, Container, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
-import Service from "../Service/Service";
-import Footer from '../../../pages/Shared/Footer/Footer'
-const AllServices = () => {
-  const [services, setServices] = useState([]);
+
+import Blog from "../Blog/Blog";
+const Blogs = () => {
+  const [blogs, setBlogs] = useState([]);
   const [ isLoading, setIsLoading ] = useState(true);
   useEffect(() => {
-    fetch("https://mighty-bastion-35979.herokuapp.com/products")
+    fetch("http://localhost:5000/blogs")
       .then((res) => res.json())
       .then((data) => {
-        setServices(data)
+        setBlogs(data)
         setIsLoading(false)
       });
   }, []);
@@ -23,7 +23,7 @@ const AllServices = () => {
         gutterBottom
         component="div"
       >
-        Our All Services
+        Latest Blogs
       </Typography>
       {isLoading ? (
         <Box sx={{ mt: 3, textAlign: "center" }}>
@@ -37,16 +37,16 @@ const AllServices = () => {
             columns={{ xs: 4, sm: 8, md: 12 }}
             justify="center"
           >
-            {services?.map((service, index) => (
-              <Service service={service} key={service._id} />
+            {blogs?.map((blog, index) => (
+              <Blog blog={blog} key={index} />
             ))}
           </Grid>
         </Box>
       )}
     </Container>
-    <Footer></Footer>
+   
     </>
   );
 };
 
-export default AllServices;
+export default Blogs;

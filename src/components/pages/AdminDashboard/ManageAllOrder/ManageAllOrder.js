@@ -1,4 +1,4 @@
-import { Button, CircularProgress, Container } from "@mui/material";
+import { Button, CircularProgress, Container, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import swal from "sweetalert";
@@ -54,6 +54,13 @@ const ManageAllOrder = () => {
 
   return (
     <Container>
+      <Typography
+            variant="h5"
+            sx={{ fontWeight: "bold", color: "#444444", textAlign:'center', mb: 2 }}
+            component="div"
+          >
+            Manage All Orders
+          </Typography>
       {isLoading ? (
         <Box sx={{ mt: 3, textAlign: "center" }}>
           <CircularProgress></CircularProgress>

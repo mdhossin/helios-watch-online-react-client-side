@@ -84,7 +84,7 @@ function Navbar() {
               to="/about"
               className={classes.link}
             >
-              <Button color="inherit">About</Button>
+              <Button color="inherit">About Us</Button>
             </Link>
             <Link
               activeStyle={{
@@ -95,16 +95,6 @@ function Navbar() {
               className={classes.link}
             >
               <Button color="inherit">Services</Button>
-            </Link>
-            <Link
-              activeStyle={{
-                fontWeight: "bold",
-                color: "yellow",
-              }}
-              to="/contact"
-              className={classes.link}
-            >
-              <Button color="inherit">Contact</Button>
             </Link>
 
             {user?.email && (
@@ -119,6 +109,21 @@ function Navbar() {
                 <Button color="inherit">Dashboard</Button>
               </Link>
             )}
+            <Typography
+              className={classes.linkButton}
+              variant="body1"
+              sx={{
+                fontWeight: "bold",
+                display: "inline-block",
+                color: "#cfd8dc",
+                fontSize: "16px",
+                marginTop: "7px",
+                marginLeft: "15px",
+              }}
+              component="div"
+            >
+              {user?.displayName}
+            </Typography>
 
             {!user?.email ? (
               <Link className={classes.linkButton} to="/login">
@@ -127,11 +132,13 @@ function Navbar() {
                 </Button>
               </Link>
             ) : (
-              <Link className={classes.linkButton} to="/register">
-                <Button onClick={logout} variant="outlined" color="inherit">
-                  Logout
-                </Button>
-              </Link>
+              <>
+                <Link className={classes.linkButton} to="/register">
+                  <Button onClick={logout} variant="outlined" color="inherit">
+                    Logout
+                  </Button>
+                </Link>
+              </>
             )}
           </Box>
         )}

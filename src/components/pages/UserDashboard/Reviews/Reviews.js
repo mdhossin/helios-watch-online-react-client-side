@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Container, Grid, TextField } from "@mui/material";
+import { Button, Container, Grid, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { useForm } from "react-hook-form";
 import swal from "sweetalert";
@@ -34,7 +34,14 @@ const Reviews = () => {
 
   return (
     <>
-      <Container sx={{ py: 5, mb: 2 }}>
+      <Container>
+      <Typography
+            variant="h5"
+            sx={{ fontWeight: "bold", color: "#444444" }}
+            component="div"
+          >
+            Add Reviews
+          </Typography>
         <Box>
           <Grid container spacing={5}>
             <Grid item xs={12} md={6}>

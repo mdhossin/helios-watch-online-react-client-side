@@ -53,7 +53,7 @@ const ReviewsUser = () => {
   return (
     <Container sx={{ pb: 8, mt: 2 }}>
       <Typography
-        sx={{ textAlign: "center", mb: 5 }}
+        sx={{ textAlign: "center", mb: 5, color: '#444444' }}
         variant="h3"
         gutterBottom
         component="div"

@@ -62,7 +62,7 @@ const ManageProducts = () => {
       <Container sx={{ pt: 3, pb: 5 }}>
         <Typography
           sx={{ textAlign: "center", mb: 5 }}
-          variant="h4"
+          variant="h5"
           gutterBottom
           component="div"
         >

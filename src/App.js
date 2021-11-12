@@ -10,6 +10,7 @@ import AllServices from "./components/pages/AllServices/AllServices/AllServices"
 import PlaceOrder from "./components/pages/PlaceOrder/PlaceOrder";
 import AdminRoute from "./components/pages/Login/AdminRoute/AdminRoute";
 import Dashboard from "./components/pages/Home/Home/Dashboard/Dashboard";
+import AboutUs from "./components/pages/AboutUs/AboutUs";
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
           </Route>
           <Route exact path="/home">
             <Home></Home>
+          </Route>
+          <Route exact path="/about">
+            <AboutUs></AboutUs>
           </Route>
           <Route exact path="/allServices">
             <AllServices></AllServices>
