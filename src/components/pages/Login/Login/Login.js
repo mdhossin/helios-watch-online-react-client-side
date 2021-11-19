@@ -3,11 +3,9 @@ import {
   Alert,
   Avatar,
   Button,
-  Checkbox,
   CircularProgress,
   Container,
   CssBaseline,
-  FormControlLabel,
   Grid,
   TextField,
   Typography,
@@ -22,7 +20,6 @@ const Login = () => {
   // console.log(loginData);
 
   const {
-    user,
     loginWithEmailAndPassword,
     signInWithGoolge,
     authError,

@@ -1,6 +1,7 @@
+import React, { useEffect, useState } from "react";
 import { Button, CircularProgress, Container, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useEffect, useState } from "react";
+import DeleteIcon from '@mui/icons-material/Delete';
 import swal from "sweetalert";
 import "./ManageAllOrder.css";
 // manage all order page
@@ -101,6 +102,7 @@ const ManageAllOrder = () => {
                     variant="outlined"
                     color="error"
                   >
+                     <DeleteIcon sx={{fontSize: '22px', mr: 0.5}} />
                     Delete
                   </Button>
                 </td>

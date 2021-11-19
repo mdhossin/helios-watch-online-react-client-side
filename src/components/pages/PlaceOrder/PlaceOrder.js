@@ -42,7 +42,7 @@ const PlaceOrder = () => {
         setProduct(data);
         setIsLoading(false);
       });
-  }, []);
+  }, [id, setIsLoading]);
   // when click the button place the order from
   const onSubmit = (data) => {
     data.service = product;

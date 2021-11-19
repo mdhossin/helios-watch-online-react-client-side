@@ -12,6 +12,7 @@ import {
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@mui/styles";
+import DeleteIcon from '@mui/icons-material/Delete';
 import swal from "sweetalert";
 
 const useStyles = makeStyles(() => ({
@@ -106,6 +107,7 @@ const ManageProducts = () => {
                         variant="outlined"
                         color="error"
                       >
+                        <DeleteIcon sx={{fontSize: '22px', mr: 0.5}} />
                         delete
                       </Button>
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Box } from "@mui/system";
 import useAuth from "../../../hooks/useAuth";
-
+import DeleteIcon from "@mui/icons-material/Delete";
 import {
   CircularProgress,
   Container,
@@ -121,6 +121,7 @@ const MyOrders = () => {
                       variant="outlined"
                       color="error"
                     >
+                      <DeleteIcon sx={{ fontSize: "22px", mr: 0.5 }} />
                       Delete
                     </Button>
                     <Typography

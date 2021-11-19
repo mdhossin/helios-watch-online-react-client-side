@@ -3,10 +3,9 @@ import { Button, Container, Grid, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { useForm } from "react-hook-form";
 import swal from "sweetalert";
-import useAuth from "../../../hooks/useAuth";
+
 // reviews page
 const Reviews = () => {
-  const { user } = useAuth();
   const {
     register,
     handleSubmit,

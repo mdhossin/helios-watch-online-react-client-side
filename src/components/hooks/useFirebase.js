@@ -101,6 +101,7 @@ const useFirebase = () => {
         const redirects = location?.state?.from || "/";
         // history.push(redirects);
         // or
+        console.log(location, history);
         history.replace(redirects);
         setAuthError("");
       })
