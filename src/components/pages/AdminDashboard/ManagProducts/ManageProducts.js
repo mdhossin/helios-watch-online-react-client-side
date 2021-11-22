@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import {
   Button,
   Card,
@@ -10,7 +11,6 @@ import {
   Typography,
 } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useEffect, useState } from "react";
 import { makeStyles } from "@mui/styles";
 import DeleteIcon from '@mui/icons-material/Delete';
 import swal from "sweetalert";
@@ -33,6 +33,7 @@ const ManageProducts = () => {
   const [isLoading, setIsLoading] = useState(true);
   // load the product data
   useEffect(() => {
+    setIsLoading(true)
     fetch("https://mighty-bastion-35979.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => {

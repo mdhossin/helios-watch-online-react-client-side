@@ -1,6 +1,8 @@
+import React, { useEffect, useState } from "react";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import { CircularProgress, Container, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useEffect, useState } from "react";
 import Service from "../Service/Service";
 import Footer from "../../../pages/Shared/Footer/Footer";
 // all services page
@@ -8,6 +10,8 @@ const AllServices = () => {
   const [services, setServices] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
+    AOS.init();
+    setIsLoading(true)
     fetch("https://mighty-bastion-35979.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => {
@@ -39,7 +43,7 @@ const AllServices = () => {
               justify="center"
             >
               {services?.map((service, index) => (
-                <Service service={service} key={service._id} />
+                <Service aos="fade-up-left" aos_offset="100" service={service} key={service._id} />
               ))}
             </Grid>
           </Box>

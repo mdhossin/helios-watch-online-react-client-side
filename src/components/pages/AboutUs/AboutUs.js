@@ -1,4 +1,7 @@
 import React from "react";
+// aos libaray for smooth scrolling
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import { Button, Container, Typography } from "@mui/material";
@@ -14,6 +17,7 @@ const appoinmentBg = {
 
 // about us page
 const AboutUs = () => {
+  AOS.init();
   return (
     <>
       <Box sx={{ backgroundColor: "#ffffff" }}>
@@ -42,7 +46,13 @@ const AboutUs = () => {
         </Box>
         <Container sx={{ my: 5 }}>
           <Grid container spacing={3}>
-            <Grid item xs={12} md={6}>
+            <Grid
+              data-aos="fade-right"
+              data-aos-offset="100"
+              item
+              xs={12}
+              md={6}
+            >
               <Typography variant="h4" gutterBottom component="div">
                 WHO WE ARE
               </Typography>
@@ -69,7 +79,13 @@ const AboutUs = () => {
                 and cuff links.
               </Typography>
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid
+              data-aos="fade-left"
+              data-aos-offset="100"
+              item
+              xs={12}
+              md={6}
+            >
               <Typography variant="h4" gutterBottom component="div">
                 WHAT WE BELIEVE
               </Typography>

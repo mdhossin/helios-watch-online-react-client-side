@@ -1,4 +1,6 @@
 import React from "react";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import {
   AppBar,
   Button,
@@ -40,6 +42,7 @@ const Root = styled("div")(({ theme }) => ({
 // footer page
 const Footer = () => {
   const classes = useStyles();
+  AOS.init();
   return (
     <AppBar
       sx={{ py: 5, backgroundColor: "#1976D2", color: "#FBFBFB" }}
@@ -49,7 +52,7 @@ const Footer = () => {
       <Container>
         <Toolbar>
           <Grid container spacing={3}>
-            <Grid item xs={6} sm={6} md={3}>
+            <Grid data-aos="fade-up-left" data-aos-offset="100" item xs={6} sm={6} md={3}>
               <Typography variant="h6" gutterBottom component="div">
                 COMPANY
               </Typography>
@@ -77,7 +80,7 @@ const Footer = () => {
                 </ListItem>
               </List>
             </Grid>
-            <Grid item xs={6} sm={6} md={3}>
+            <Grid data-aos="fade-up" data-aos-offset="100" item xs={6} sm={6} md={3}>
               <Typography variant="h6" gutterBottom component="div">
                 POLICIES AND ORDER
               </Typography>
@@ -104,7 +107,7 @@ const Footer = () => {
                 </ListItem>
               </List>
             </Grid>
-            <Grid item xs={5} sm={5} md={3}>
+            <Grid data-aos="fade-down" data-aos-offset="100" item xs={5} sm={5} md={3}>
               <Typography variant="h6" gutterBottom component="div">
                 HELP
               </Typography>
@@ -131,7 +134,7 @@ const Footer = () => {
                 </ListItem>
               </List>
             </Grid>
-            <Grid item xs={7} sm={7} md={3}>
+            <Grid data-aos="fade-up-right" data-aos-offset="100" item xs={7} sm={7} md={3}>
               <Typography variant="h6" gutterBottom component="div">
                 SUBSCRIBE TO OUR NEWSLETTER
               </Typography>

@@ -1,3 +1,6 @@
+import React, { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import {
   Button,
   CircularProgress,
@@ -6,8 +9,8 @@ import {
   Typography,
 } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
 import SingleService from "../SingleService/SingleSerive";
 
 // services page connected to home page
@@ -16,6 +19,8 @@ const Services = () => {
   // console.log(services);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
+    AOS.init();
+    setIsLoading(true);
     fetch("https://mighty-bastion-35979.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => {
@@ -43,7 +48,12 @@ const Services = () => {
           <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 12 }}>
               {services?.slice(0, 6).map((service, index) => (
-                <SingleService service={service} key={service._id} />
+                <SingleService
+                  aos="fade-up-left"
+                  aos_offset="100"
+                  service={service}
+                  key={service._id}
+                />
               ))}
             </Grid>
           </Box>

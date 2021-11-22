@@ -1,12 +1,16 @@
+import React, { useEffect, useState } from "react";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import { CircularProgress, Container, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useEffect, useState } from "react";
 import Blog from "../Blog/Blog";
 // blogs page
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
+    AOS.init();
+    setIsLoading(true)
     fetch("https://mighty-bastion-35979.herokuapp.com/blogs")
       .then((res) => res.json())
       .then((data) => {
@@ -38,7 +42,7 @@ const Blogs = () => {
               justify="center"
             >
               {blogs?.map((blog, index) => (
-                <Blog blog={blog} key={index} />
+                <Blog aos="fade-up-right" aos_offset="100" blog={blog} key={index} />
               ))}
             </Grid>
           </Box>

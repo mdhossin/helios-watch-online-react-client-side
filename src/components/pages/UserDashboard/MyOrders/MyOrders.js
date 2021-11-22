@@ -38,6 +38,7 @@ const MyOrders = () => {
   const [isLoading, setIsLoading] = useState(true);
   // load the user matched data only
   useEffect(() => {
+    setIsLoading(true)
     fetch(`https://mighty-bastion-35979.herokuapp.com/order/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {

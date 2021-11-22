@@ -21,15 +21,22 @@ const useStyles = makeStyles(() => ({
   icon: {
     color: "white",
   },
+  media: {
+    transition: ".3s all ease",
+    "&:hover": {
+      transform: "scale(1.05)",
+    },
+  },
 }));
 // single service page connected to all services page
-const Service = ({ service }) => {
+const Service = ({ service, aos, aos_offset }) => {
   const classes = useStyles();
   const { _id, title, image, description, price } = service;
   return (
     <Grid item xs={4} sm={4} md={4}>
-      <Card sx={{ height: "100%" }} className={classes.link} elevation={0}>
+      <Card data-aos={aos} data-aos-offset={aos_offset} sx={{ height: "100%" }} className={classes.link} elevation={0}>
         <CardMedia
+        className={classes.media}
           component="img"
           height="250px"
           width="100%"

@@ -7,11 +7,13 @@ import { Box } from "@mui/system";
 const PrivateRoute = ({ children, ...rest }) => {
   const { user, isLoading } = useAuth();
   if (isLoading) {
-    return <Box sx={{mt: 3, textAlign: 'center'}}>
+    return (
+      <Box sx={{ mt: 3, textAlign: "center" }}>
         <CircularProgress></CircularProgress>
-    </Box>;
+      </Box>
+    );
   }
- 
+
   return (
     <Route
       {...rest}

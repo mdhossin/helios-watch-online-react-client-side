@@ -19,15 +19,28 @@ const useStyles = makeStyles(() => ({
   icon: {
     color: "white",
   },
+  media: {
+    transition: ".3s all ease",
+    "&:hover": {
+      transform: "scale(1.05)",
+    },
+  },
 }));
 // blog page connected to blogs page
-const Blog = ({ blog }) => {
+const Blog = ({ blog, aos, aos_offset }) => {
   const classes = useStyles();
   const { name, title, image, description } = blog;
   return (
     <Grid item xs={4} sm={4} md={4}>
-      <Card sx={{ height: "100%" }} className={classes.link} elevation={0}>
+      <Card
+        data-aos={aos}
+        data-aos-offset={aos_offset}
+        sx={{ height: "100%" }}
+        className={classes.link}
+        elevation={0}
+      >
         <CardMedia
+          className={classes.media}
           component="img"
           height="250px"
           width="100%"

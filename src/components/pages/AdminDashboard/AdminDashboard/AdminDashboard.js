@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Switch, Route, Link, useRouteMatch, NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -16,7 +17,6 @@ import HomeIcon from "@mui/icons-material/Home";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import GridViewIcon from "@mui/icons-material/GridView";
 import AddIcon from "@mui/icons-material/Add";
-import { Switch, Route, Link, useRouteMatch, NavLink } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import { Avatar, Button } from "@mui/material";
 import AddModeratorIcon from "@mui/icons-material/AddModerator";

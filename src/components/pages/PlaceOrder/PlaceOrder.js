@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import {
   Button,
   CircularProgress,
@@ -7,7 +8,6 @@ import {
   Typography,
 } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import Footer from "../Shared/Footer/Footer";

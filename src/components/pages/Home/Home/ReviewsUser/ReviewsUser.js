@@ -1,18 +1,20 @@
+import React, { useEffect, useState } from "react";
 import {
   Avatar,
   Card,
   CardContent,
   CircularProgress,
   Container,
-  Grid,
   Rating,
   Stack,
   Typography,
 } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useEffect, useState } from "react";
 import { makeStyles } from "@mui/styles";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import PersonPinIcon from "@mui/icons-material/PersonPin";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import useAuth from "../../../../hooks/useAuth";
 
 const useStyles = makeStyles(() => ({
@@ -41,6 +43,7 @@ const ReviewsUser = () => {
   const classes = useStyles();
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
+    setIsLoading(true);
     fetch("https://mighty-bastion-35979.herokuapp.com/reviews")
       .then((res) => res.json())
       .then((data) => {
@@ -48,10 +51,46 @@ const ReviewsUser = () => {
         setIsLoading(false);
       });
   }, []);
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    autoplay: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
   return (
     <Container sx={{ pb: 8, mt: 2 }}>
       <Typography
-        sx={{ textAlign: "center", mb: 5, color: "#444444" }}
+        sx={{ textAlign: "center", mb: 1, color: "#444444" }}
         variant="h3"
         gutterBottom
         component="div"
@@ -64,51 +103,49 @@ const ReviewsUser = () => {
         </Box>
       ) : (
         <Box sx={{ flexGrow: 1 }}>
-          <Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 12 }}>
+          <Slider {...settings}>
             {reviews?.map((review, index) => (
-              <Grid key={index} item xs={4} sm={4} md={4}>
-                <Card className={classes.link} elevation={0}>
-                  <Stack
-                    className={classes.imageContainer}
-                    direction="row"
-                    spacing={2}
-                  >
-                    {user?.photoURL ? (
-                      <Avatar alt="Remy Sharp" src={user?.photoURL} />
-                    ) : (
-                      <AccountCircleIcon sx={{ fontSize: "50px" }} />
-                    )}
+              <Card className={classes.link} elevation={0}>
+                <Stack
+                  className={classes.imageContainer}
+                  direction="row"
+                  spacing={2}
+                >
+                  {user?.photoURL ? (
+                    <Avatar alt="Remy Sharp" src={user?.photoURL} />
+                  ) : (
+                    <PersonPinIcon sx={{ fontSize: "50px" }} />
+                  )}
 
-                    <Typography gutterBottom variant="h6" component="div">
-                      {review?.user}
-                    </Typography>
-                  </Stack>
-                  <CardContent>
-                    <Typography
-                      sx={{ textAlign: "center" }}
-                      variant="body1"
-                      color="text.secondary"
-                    >
-                      "{review?.description.slice(0, 90)}...."
-                    </Typography>
-                    <Typography
-                      sx={{ textAlign: "center", mt: 2 }}
-                      gutterBottom
-                      variant="body1"
-                      component="div"
-                    >
-                      <Rating
-                        name="half-rating-read"
-                        defaultValue={review?.number}
-                        precision={0.5}
-                        readOnly
-                      />
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
+                  <Typography gutterBottom variant="h6" component="div">
+                    {review?.user}
+                  </Typography>
+                </Stack>
+                <CardContent>
+                  <Typography
+                    sx={{ textAlign: "center" }}
+                    variant="body1"
+                    color="text.secondary"
+                  >
+                    "{review?.description.slice(0, 90)}...."
+                  </Typography>
+                  <Typography
+                    sx={{ textAlign: "center", mt: 2 }}
+                    gutterBottom
+                    variant="body1"
+                    component="div"
+                  >
+                    <Rating
+                      name="half-rating-read"
+                      defaultValue={review?.number}
+                      precision={0.5}
+                      readOnly
+                    />
+                  </Typography>
+                </CardContent>
+              </Card>
             ))}
-          </Grid>
+          </Slider>
         </Box>
       )}
     </Container>
