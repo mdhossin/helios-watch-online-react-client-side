@@ -43,7 +43,7 @@ const AllServices = () => {
               justify="center"
             >
               {services?.map((service, index) => (
-                <Service aos="fade-up-left" aos_offset="100" service={service} key={service._id} />
+                <Service aos="fade-up" aos_offset="100" service={service} key={service._id} />
               ))}
             </Grid>
           </Box>

@@ -31,7 +31,6 @@ const useStyles = makeStyles(() => ({
 }));
 // sinlge service page connected ot servies page
 const SingleService = ({ service, aos, aos_offset }) => {
-  console.log(service);
   const classes = useStyles();
   const { _id, title, image, description, price } = service;
   return (

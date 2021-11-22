@@ -31,7 +31,7 @@ const Services = () => {
 
   return (
     <>
-      <Container sx={{ pt: 3, pb: 5 }}>
+      <Container sx={{ py: 5 }}>
         <Typography
           sx={{ textAlign: "center", mb: 5, color: "#444444" }}
           variant="h3"
@@ -49,7 +49,7 @@ const Services = () => {
             <Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 12 }}>
               {services?.slice(0, 6).map((service, index) => (
                 <SingleService
-                  aos="fade-up-left"
+                  aos="fade-up"
                   aos_offset="100"
                   service={service}
                   key={service._id}

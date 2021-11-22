@@ -46,7 +46,7 @@ const MenWatch = () => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid data-aos="fade-up-left" data-aos-offset="100" item xs={12} md={5}>
+        <Grid  item xs={12} md={5}>
           <img src={watchOne} alt="banner" height="100%" width="100%" />
         </Grid>
       </Grid>

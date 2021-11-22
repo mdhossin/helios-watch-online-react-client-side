@@ -42,7 +42,7 @@ const Blogs = () => {
               justify="center"
             >
               {blogs?.map((blog, index) => (
-                <Blog aos="fade-up-right" aos_offset="100" blog={blog} key={index} />
+                <Blog aos="fade-up" aos_offset="100" blog={blog} key={index} />
               ))}
             </Grid>
           </Box>
