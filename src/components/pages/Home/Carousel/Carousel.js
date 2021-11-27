@@ -4,21 +4,21 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { Box } from "@mui/system";
+import sliderOne from '../../../images/bannerImg/banner-1.png'
+import sliderTwo from '../../../images/bannerImg/banner-2.jpg'
+import sliderThree from '../../../images/bannerImg/banner-3.png'
 const images = [
   {
     id: 1,
-    imgPath:
-      "https://www.helioswatchstore.com/sites/default/files/1500x600.png",
+    imgPath:sliderOne,
   },
   {
     id: 2,
-    imgPath:
-      "https://www.helioswatchstore.com/sites/default/files/1500x600.jpg",
+    imgPath:sliderTwo,
   },
   {
     id: 3,
-    imgPath:
-      "https://www.helioswatchstore.com/sites/default/files/banner%20opt2.jpg",
+    imgPath:sliderThree,
   },
 ];
 

@@ -14,7 +14,7 @@ const MenWatch = () => {
       <Grid container spacing={2}>
         <Grid item xs={12} md={7}>
           <Grid container item sx={12}>
-            <Grid data-aos="fade-up-left" data-aos-offset="100" sx={{ textAlign: "center", p: 5 }} item xs={12} md={12}>
+            <Grid data-aos="fade-up" data-aos-offset="100" sx={{ textAlign: "center", p: 5 }} item xs={12} md={12}>
               <Typography variant="caption" display="block" gutterBottom>
                 ELEGANCE IS SIMPLICITY
               </Typography>
@@ -36,7 +36,7 @@ const MenWatch = () => {
             <Grid item xs={12} md={12}>
               {" "}
               <Grid container item sx={12}>
-                <Grid data-aos="fade-right" data-aos-offset="100" item xs={6} md={6}>
+                <Grid data-aos="fade-down" data-aos-offset="100" item xs={6} md={6}>
                   <img src={fosel} alt="banner" height="100%" width="100%" />
                 </Grid>
                 <Grid data-aos="fade-top" data-aos-offset="100" item xs={6} md={6}>
@@ -46,7 +46,7 @@ const MenWatch = () => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid  item xs={12} md={5}>
+        <Grid data-aos="fade-up" data-aos-offset="100" item xs={12} md={5}>
           <img src={watchOne} alt="banner" height="100%" width="100%" />
         </Grid>
       </Grid>

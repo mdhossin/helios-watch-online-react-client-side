@@ -88,7 +88,7 @@ const ReviewsUser = () => {
     ],
   };
   return (
-    <Container sx={{ pb: 8, mt: 2 }}>
+    <Container sx={{ pb: 8, mt: 2 , px: 4}}>
       <Typography
         sx={{ textAlign: "center", mb: 1, color: "#444444" }}
         variant="h3"
