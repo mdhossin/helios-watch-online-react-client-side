@@ -9,7 +9,7 @@ const ManageAllOrder = () => {
   const [orders, setOrders] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    fetch("https://mighty-bastion-35979.herokuapp.com/orders")
+    fetch("https://pure-headland-43911.herokuapp.com/orders")
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);
@@ -21,7 +21,7 @@ const ManageAllOrder = () => {
   const handelPendingChange = (id) => {
     const data = orders?.find((pd) => pd?._id === id);
     data.status = "Shipped";
-    fetch(`https://mighty-bastion-35979.herokuapp.com/orders/${id}`, {
+    fetch(`https://pure-headland-43911.herokuapp.com/orders/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -39,7 +39,7 @@ const ManageAllOrder = () => {
   const handelDelete = (id) => {
     const procedd = window.confirm("Are you sure you want to delete?");
     if (procedd) {
-      fetch(`https://mighty-bastion-35979.herokuapp.com/orders/${id}`, {
+      fetch(`https://pure-headland-43911.herokuapp.com/orders/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

@@ -14,7 +14,7 @@ const Reviews = () => {
   } = useForm();
   // when click the button create new reviews
   const onSubmit = (data) => {
-    fetch("https://mighty-bastion-35979.herokuapp.com/reviews", {
+    fetch("https://pure-headland-43911.herokuapp.com/reviews", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

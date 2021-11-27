@@ -13,7 +13,7 @@ const MakeAdmin = () => {
   // from submit
   const handleAdminSubmit = (e) => {
     const user = { email };
-    fetch("https://mighty-bastion-35979.herokuapp.com/users/admin", {
+    fetch("https://pure-headland-43911.herokuapp.com/users/admin", {
       method: "PUT",
       headers: {
         "content-type": "application/json",

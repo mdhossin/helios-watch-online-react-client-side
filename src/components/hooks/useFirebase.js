@@ -127,7 +127,7 @@ const useFirebase = () => {
 
   // admin data load here
   useEffect(() => {
-    fetch(`https://mighty-bastion-35979.herokuapp.com/users/${user?.email}`)
+    fetch(`https://pure-headland-43911.herokuapp.com/users/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data.admin));
   }, [user?.email]);
@@ -149,7 +149,7 @@ const useFirebase = () => {
   // user save on the database
   const saveUserOnDatabase = (email, displayName, method) => {
     const user = { email, displayName };
-    fetch("https://mighty-bastion-35979.herokuapp.com/users", {
+    fetch("https://pure-headland-43911.herokuapp.com/users", {
       method: method,
       headers: {
         "content-type": "application/json",

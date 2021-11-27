@@ -34,7 +34,7 @@ const ManageProducts = () => {
   // load the product data
   useEffect(() => {
     setIsLoading(true)
-    fetch("https://mighty-bastion-35979.herokuapp.com/products")
+    fetch("https://pure-headland-43911.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => {
         setServices(data);
@@ -46,7 +46,7 @@ const ManageProducts = () => {
   const handelDelete = (id) => {
     const procedd = window.confirm("Are you sure you want to delete?");
     if (procedd) {
-      fetch(`https://mighty-bastion-35979.herokuapp.com/delete/${id}`, {
+      fetch(`https://pure-headland-43911.herokuapp.com/delete/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

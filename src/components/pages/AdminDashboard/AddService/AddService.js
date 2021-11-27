@@ -13,7 +13,7 @@ const AddService = () => {
   } = useForm();
   // get the from data for createing new service
   const onSubmit = (data) => {
-    fetch("https://mighty-bastion-35979.herokuapp.com/products", {
+    fetch("https://pure-headland-43911.herokuapp.com/products", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

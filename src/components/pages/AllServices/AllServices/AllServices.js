@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import AOS from 'aos'
-import 'aos/dist/aos.css'
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { CircularProgress, Container, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import Service from "../Service/Service";
@@ -11,8 +11,8 @@ const AllServices = () => {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     AOS.init();
-    setIsLoading(true)
-    fetch("https://mighty-bastion-35979.herokuapp.com/products")
+    setIsLoading(true);
+    fetch("https://pure-headland-43911.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => {
         setServices(data);
@@ -43,7 +43,12 @@ const AllServices = () => {
               justify="center"
             >
               {services?.map((service, index) => (
-                <Service aos="fade-up" aos_offset="100" service={service} key={service._id} />
+                <Service
+                  aos="fade-up"
+                  aos_offset="100"
+                  service={service}
+                  key={service._id}
+                />
               ))}
             </Grid>
           </Box>

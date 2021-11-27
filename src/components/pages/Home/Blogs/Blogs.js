@@ -11,7 +11,7 @@ const Blogs = () => {
   useEffect(() => {
     AOS.init();
     setIsLoading(true)
-    fetch("https://mighty-bastion-35979.herokuapp.com/blogs")
+    fetch("https://pure-headland-43911.herokuapp.com/blogs")
       .then((res) => res.json())
       .then((data) => {
         setBlogs(data);

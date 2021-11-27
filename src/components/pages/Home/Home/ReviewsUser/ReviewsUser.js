@@ -44,7 +44,7 @@ const ReviewsUser = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
     setIsLoading(true);
-    fetch("https://mighty-bastion-35979.herokuapp.com/reviews")
+    fetch("https://pure-headland-43911.herokuapp.com/reviews")
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);

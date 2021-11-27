@@ -21,7 +21,7 @@ const Services = () => {
   useEffect(() => {
     AOS.init();
     setIsLoading(true);
-    fetch("https://mighty-bastion-35979.herokuapp.com/products")
+    fetch("https://pure-headland-43911.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => {
         setServices(data);
